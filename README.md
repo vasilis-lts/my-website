@@ -36,3 +36,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Examples
+
+A real-time chat application with WebSockets
+A full-fledged single-page application (SPA) using a front-end framework such as React or Vue.js
+A map-based application that shows markers and popups on an interactive map
+A machine learning application that uses a JavaScript library such as TensorFlow.js
+A virtual reality application using Three.js or A-Frame
+A voice-controlled application using the Web Speech API
+A real-time collaborative text editor using operational transformations
+A game with physics simulation using a JavaScript library such as Matter.js
+A Progressive Web App (PWA) that can be installed on a user's device and work offline
+A browser extension that adds functionality to a website or enhances the user experience.
+These projects will showcase your skills in advanced JavaScript concepts, such as real-time communication, front-end frameworks, web APIs, and browser extensions.

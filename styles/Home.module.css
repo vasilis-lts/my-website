@@ -1,24 +1,25 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 6rem;
+  justify-content: center;
+  padding: 20px;
   min-height: 100vh;
 }
 
 .center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .menuitem {
   position: relative;
-  width: 300px;
+  width: 90%;
+  max-width: 400px;
   margin-top: 10px;
   text-align: center;
   padding: 1rem;
@@ -47,11 +48,13 @@
   flex-direction: column;
   justify-content: inherit;
   align-items: inherit;
+  text-align: center;
   font-size: 1.6rem;
   max-width: var(--max-width);
-  width: 100%;
+  width: 90%;
   z-index: 2;
   font-family: var(--font-mono);
+  margin-bottom: 10px;
 }
 
 .description a {
@@ -179,6 +182,25 @@
   background-clip: content-box;
 }
 
+.link {
+  border: 1px solid #ccc;
+  padding: 5px 7px 2px 7px;
+  margin-inline: 5px;
+  border-radius: 4px;
+}
+
+.link svg {
+  color: #ccc
+}
+
+.link:hover {
+  border-color: white;
+}
+
+.link:hover svg {
+  color: white;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -220,10 +242,6 @@
 
   .card h2 {
     margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
   }
 
   .center::before {
@@ -271,6 +289,15 @@
         transparent 0%,
         rgb(var(--background-end-rgb)) 40%);
     z-index: 1;
+  }
+
+  .main {
+    padding-top: 100px;
+    justify-content: inherit;
+  }
+
+  .big_title {
+    font-size: 38px;
   }
 }
 

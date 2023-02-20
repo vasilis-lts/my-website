@@ -36,7 +36,7 @@ const ParticlesTest = () => {
             },
             onHover: {
               enable: true,
-              mode: "repulse",
+              mode: "attract",
             },
             resize: true,
           },
@@ -44,7 +44,7 @@ const ParticlesTest = () => {
             push: {
               quantity: 4,
             },
-            repulse: {
+            attract: {
               distance: 200,
               duration: 0.4,
             },
@@ -79,7 +79,7 @@ const ParticlesTest = () => {
               enable: true,
               area: 800,
             },
-            value: 10,
+            value: 20,
           },
           opacity: {
             value: 0.5,

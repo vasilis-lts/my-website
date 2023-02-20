@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import styles from '../styles/Home.module.css'
-import { Inter } from '@next/font/google'
 import audioSelect from '../assets/menu-navigate-sound.mp3';
 import audioNavigate from '../assets/menu-select.mp3';
 import useKeypress from 'react-use-keypress';
+import { useRouter } from 'next/router';
+import { Inter } from '@next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 function MainMenu({ onItemSelect }) {
+  const router = useRouter();
+
   const [MenuItemSelected, setMenuItemSelected] = useState<number>(1);
 
   useKeypress(['ArrowUp', 'ArrowDown', 'Enter'], (event) => {
@@ -29,7 +32,19 @@ function MainMenu({ onItemSelect }) {
   });
 
   const handleItemSelect = () => {
+    let link;
+    switch (MenuItemSelected) {
+      case 1:
+        link = '/about';
+        break;
+      case 2:
+        link = '/projects';
+        break;
+      default:
+        break;
+    }
     audioPlay('select');
+    router.push(link);
   }
 
   const hoverHandler = (itemNumber: number) => {
@@ -55,24 +70,29 @@ function MainMenu({ onItemSelect }) {
       {/* <ParticlesTest /> */}
 
       <div className={styles.titles}>
-        <h1>Vasilis Litsas</h1>
-        <br />
-        <h4>Welcome to my portfolio website</h4>
+        <h1 className={styles.big_title}>Vasilis Litsas</h1>
+        <h4 style={{ marginTop: 10 }}>Web developer</h4>
       </div>
 
-      <div className={styles.center}>
+      <div className={styles.center} style={{ marginTop: 30 }}>
         <div onMouseEnter={() => hoverHandler(1)} className={`${styles.menuitem} ${MenuItemSelected === 1 ? styles.selected : ''}`}>
-          <h2 className={inter.className}>About me (CV)</h2>
+          <h2 className={inter.className}>About me</h2>
         </div>
-        <div onMouseEnter={() => hoverHandler(2)} className={`${styles.menuitem} ${MenuItemSelected === 2 ? styles.selected : ''}`}>
-          <h2 className={inter.className}>App showcase</h2>
+        <div onMouseEnter={() => hoverHandler(2)} onClick={handleItemSelect} className={`${styles.menuitem} ${MenuItemSelected === 2 ? styles.selected : ''}`}>
+          <h2 className={inter.className}>Code & Projects</h2>
         </div>
-        <div onMouseEnter={() => hoverHandler(3)} className={`${styles.menuitem} ${MenuItemSelected === 3 ? styles.selected : ''}`}>
+        {/* <div onMouseEnter={() => hoverHandler(3)} className={`${styles.menuitem} ${MenuItemSelected === 3 ? styles.selected : ''}`}>
           <h2 className={inter.className}>Contact</h2>
-        </div>
+        </div> */}
+
+
       </div>
 
 
+      <div style={{ position: "absolute", bottom: 20, textAlign: "center" }}>
+        <p style={{ marginTop: 20 }}>For busineses inquiries contact me at:</p>
+        <p style={{ marginTop: 5 }}>vasileios.litsas@gmail.com</p>
+      </div>
     </main>
   )
 }
