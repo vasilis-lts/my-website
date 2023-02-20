@@ -39,7 +39,7 @@ export default function Projects() {
         </div>
         <div style={{ marginTop: 40, width: '90%', maxWidth: 500 }} className="flex-center-y">
           <p>For some additional info check out my LinkedIn profile! </p>
-          <a href="https://www.linkedin.com/in/vasilis-litsas/" target="_blank"><LinkedInIcon style={{ fontSize: 42, color: "#064787" }} /></a>
+          <a href="https://www.linkedin.com/in/vasilis-litsas/" target="_blank" rel="noreferrer"><LinkedInIcon style={{ fontSize: 42, color: "#064787" }} /></a>
         </div>
 
         <div style={{ position: "absolute", bottom: 20, textAlign: "center" }}>

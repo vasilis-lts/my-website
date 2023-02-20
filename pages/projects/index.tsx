@@ -85,8 +85,8 @@ export default function Projects() {
             className={`flex-center-y jcsb ${styles.menuitem} ${MenuItemSelected === 1 ? styles.selected : ''}`}>
             <h3 className={`text-center`}>The dashboard</h3>
             <Box className="flex-center-y">
-              <a className={styles.link} target="_blank" href="https://statuesque-strudel-d3a015.netlify.app"><LinkIcon /></a>
-              <a className={styles.link} target="_blank" href="https://github.com/vasilis-lts/the-dashboard"><GitHubIcon /></a>
+              <a className={styles.link} target="_blank" rel="noreferrer" href="https://statuesque-strudel-d3a015.netlify.app"><LinkIcon /></a>
+              <a className={styles.link} target="_blank" rel="noreferrer" href="https://github.com/vasilis-lts/the-dashboard"><GitHubIcon /></a>
             </Box>
           </div>
           <div
@@ -94,8 +94,8 @@ export default function Projects() {
             className={`flex-center-y jcsb ${styles.menuitem} ${MenuItemSelected === 2 ? styles.selected : ''}`}>
             <h3 className={`text-center`}>Genetic algorithm</h3>
             <Box className="flex-center-y">
-              <a className={styles.link} target="_blank" href="https://optimistic-noether-48efcb.netlify.app"><LinkIcon /></a>
-              <a className={styles.link} target="_blank" href="https://github.com/vasilis-lts/Genetic-Algorithm-Performance"><GitHubIcon /></a>
+              <a className={styles.link} target="_blank" rel="noreferrer" href="https://optimistic-noether-48efcb.netlify.app"><LinkIcon /></a>
+              <a className={styles.link} target="_blank" rel="noreferrer" href="https://github.com/vasilis-lts/Genetic-Algorithm-Performance"><GitHubIcon /></a>
             </Box>
           </div>
           <div
@@ -103,8 +103,8 @@ export default function Projects() {
             className={`flex-center-y jcsb ${styles.menuitem} ${MenuItemSelected === 3 ? styles.selected : ''}`}>
             <h3 className={`text-center`}>Progressive web app</h3>
             <Box className="flex-center-y">
-              <a className={styles.link} target="_blank" href="https://asset.softnet.com.gr/"><LinkIcon /></a>
-              <a className={styles.link} target="_blank" href="https://github.com/vasilis-lts/react-jira"><GitHubIcon /></a>
+              <a className={styles.link} target="_blank" rel="noreferrer" href="https://asset.softnet.com.gr/"><LinkIcon /></a>
+              <a className={styles.link} target="_blank" rel="noreferrer" href="https://github.com/vasilis-lts/react-jira"><GitHubIcon /></a>
             </Box>
           </div>
           <p style={{ marginTop: 20 }}>More to be uploaded soon...</p>
