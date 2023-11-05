@@ -1,33 +1,33 @@
-import Head from 'next/head'
-import ParticlesTest from '@/components/ParticlesTest'
-import styles from '../../styles/Home.module.css'
-import { useState } from 'react';
-import audioSelect from '../../assets/menu-navigate-sound.mp3';
-import audioNavigate from '../../assets/menu-select.mp3';
-import useKeypress from 'react-use-keypress';
-import LinkIcon from '@mui/icons-material/Link';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import { Inter } from '@next/font/google'
-import { Box } from '@mui/material';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import ParticlesTest from "@/components/ParticlesTest";
+import styles from "../../styles/Home.module.css";
+import { useState } from "react";
+import audioSelect from "../../assets/menu-navigate-sound.mp3";
+import audioNavigate from "../../assets/menu-select.mp3";
+import useKeypress from "react-use-keypress";
+import LinkIcon from "@mui/icons-material/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Inter } from "@next/font/google";
+import { Box } from "@mui/material";
+import { useRouter } from "next/router";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Projects() {
   const router = useRouter();
 
   const [MenuItemSelected, setMenuItemSelected] = useState<number>(1);
 
-  useKeypress(['ArrowUp', 'ArrowDown', 'Enter'], (event) => {
+  useKeypress(["ArrowUp", "ArrowDown", "Enter"], (event) => {
     switch (event.key) {
-      case 'ArrowUp':
-        audioPlay('navigate');
-        setMenuItemSelected(prev => prev === 1 ? 3 : prev - 1);
+      case "ArrowUp":
+        audioPlay("navigate");
+        setMenuItemSelected((prev) => (prev === 1 ? 3 : prev - 1));
         break;
-      case 'ArrowDown':
-        audioPlay('navigate');
-        setMenuItemSelected(prev => prev === 3 ? 1 : prev + 1);
+      case "ArrowDown":
+        audioPlay("navigate");
+        setMenuItemSelected((prev) => (prev === 3 ? 1 : prev + 1));
         break;
         // case 'Enter':
         //   handleItemSelect();
@@ -39,22 +39,21 @@ export default function Projects() {
 
   const hoverHandler = (itemNumber: number) => {
     setMenuItemSelected(itemNumber);
-    audioPlay('navigate');
-  }
+    audioPlay("navigate");
+  };
 
-  const audioPlay = (sfxName: 'navigate' | 'select') => {
+  const audioPlay = (sfxName: "navigate" | "select") => {
     switch (sfxName) {
-      case 'navigate':
+      case "navigate":
         new Audio(audioNavigate).play();
         break;
-      case 'select':
+      case "select":
         new Audio(audioSelect).play();
         break;
       default:
         break;
     }
-  }
-
+  };
 
   return (
     <>
@@ -68,9 +67,13 @@ export default function Projects() {
       <ParticlesTest />
 
       <main className={styles.main}>
-
-        <div style={{ position: "absolute", top: 30, left: 30, cursor: "pointer" }} className="flex-center-y" onClick={() => router.back()}>
-          <KeyboardBackspaceIcon />&nbsp;Back
+        <div
+          style={{ position: "absolute", top: 30, left: 30, cursor: "pointer" }}
+          className="flex-center-y"
+          onClick={() => router.back()}
+        >
+          <KeyboardBackspaceIcon />
+          &nbsp;Back
         </div>
 
         <div className={styles.titles}>
@@ -82,35 +85,112 @@ export default function Projects() {
         <div className={styles.center}>
           <div
             onMouseEnter={() => hoverHandler(1)}
-            className={`flex-center-y jcsb ${styles.menuitem} ${MenuItemSelected === 1 ? styles.selected : ''}`}>
+            className={`flex-center-y jcsb ${styles.menuitem} ${
+              MenuItemSelected === 1 ? styles.selected : ""
+            }`}
+          >
             <h3 className={`text-center`}>The dashboard</h3>
             <Box className="flex-center-y">
-              <a className={styles.link} target="_blank" rel="noreferrer" href="https://statuesque-strudel-d3a015.netlify.app"><LinkIcon /></a>
-              <a className={styles.link} target="_blank" rel="noreferrer" href="https://github.com/vasilis-lts/the-dashboard"><GitHubIcon /></a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://statuesque-strudel-d3a015.netlify.app"
+              >
+                <LinkIcon />
+              </a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/vasilis-lts/the-dashboard"
+              >
+                <GitHubIcon />
+              </a>
             </Box>
           </div>
           <div
             onMouseEnter={() => hoverHandler(2)}
-            className={`flex-center-y jcsb ${styles.menuitem} ${MenuItemSelected === 2 ? styles.selected : ''}`}>
+            className={`flex-center-y jcsb ${styles.menuitem} ${
+              MenuItemSelected === 2 ? styles.selected : ""
+            }`}
+          >
             <h3 className={`text-center`}>Genetic algorithm</h3>
             <Box className="flex-center-y">
-              <a className={styles.link} target="_blank" rel="noreferrer" href="https://optimistic-noether-48efcb.netlify.app"><LinkIcon /></a>
-              <a className={styles.link} target="_blank" rel="noreferrer" href="https://github.com/vasilis-lts/Genetic-Algorithm-Performance"><GitHubIcon /></a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://optimistic-noether-48efcb.netlify.app"
+              >
+                <LinkIcon />
+              </a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/vasilis-lts/Genetic-Algorithm-Performance"
+              >
+                <GitHubIcon />
+              </a>
             </Box>
           </div>
           <div
             onMouseEnter={() => hoverHandler(3)}
-            className={`flex-center-y jcsb ${styles.menuitem} ${MenuItemSelected === 3 ? styles.selected : ''}`}>
+            className={`flex-center-y jcsb ${styles.menuitem} ${
+              MenuItemSelected === 3 ? styles.selected : ""
+            }`}
+          >
             <h3 className={`text-center`}>Progressive web app</h3>
             <Box className="flex-center-y">
-              <a className={styles.link} target="_blank" rel="noreferrer" href="https://asset.softnet.com.gr/"><LinkIcon /></a>
-              <a className={styles.link} target="_blank" rel="noreferrer" href="https://github.com/vasilis-lts/react-jira"><GitHubIcon /></a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://asset.softnet.com.gr/"
+              >
+                <LinkIcon />
+              </a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/vasilis-lts/react-jira"
+              >
+                <GitHubIcon />
+              </a>
+            </Box>
+          </div>
+
+          <div
+            onMouseEnter={() => hoverHandler(4)}
+            className={`flex-center-y jcsb ${styles.menuitem} ${
+              MenuItemSelected === 4 ? styles.selected : ""
+            }`}
+          >
+            <h3 className={`text-center`}>Store Refill UI</h3>
+            <Box className="flex-center-y">
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://golden-chaja-c4dd47.netlify.app/"
+              >
+                <LinkIcon />
+              </a>
+              <a
+                className={styles.link}
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/vasilis-lts/store-refill"
+              >
+                <GitHubIcon />
+              </a>
             </Box>
           </div>
           <p style={{ marginTop: 20 }}>More to be uploaded soon...</p>
         </div>
       </main>
-
     </>
-  )
+  );
 }
